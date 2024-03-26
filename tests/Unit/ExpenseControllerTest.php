@@ -6,11 +6,16 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Expense;
+use Illuminate\Support\Facades\Artisan;
 
 class ExpenseControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    // public function setUp(){
+    //     parent(setUp());
+    //     Artisan::all('migrate:fresh');
+    // }
     public function test_index_returns_user_expenses()
     {
         $user = User::factory()->create();
